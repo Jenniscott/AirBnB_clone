@@ -4,7 +4,6 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
-from models.user import User
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
@@ -27,8 +26,12 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_create(self, arg):
+<<<<<<< HEAD
         """Creates a new instance of BaseModel, User, or any other valid class,
         saves it, and prints the id."""
+=======
+        """Creates a new instance of BaseModel."""
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
         if not arg:
             print("** class name missing **")
             return
@@ -40,8 +43,12 @@ class HBNBCommand(cmd.Cmd):
         print(new_instance.id)
 
     def do_show(self, arg):
+<<<<<<< HEAD
         """Prints the string representation of an instance based on the class
         name and id."""
+=======
+        """Prints the string representation of an instance."""
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
         args = arg.split()
         if not args:
             print("** class name missing **")
@@ -79,13 +86,18 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
+<<<<<<< HEAD
         """Prints all string representation of all instances based or not on
         the class name."""
+=======
+        """Prints all string representation."""
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
         if arg and arg not in self.classes:
             print("** class doesn't exist **")
             return
         objects = models.storage.all()
         if arg:
+<<<<<<< HEAD
             objects = {key: obj for key,
                        obj in objects.items() if key.startswith(arg)}
         print([str(obj) for obj in objects.values()])
@@ -93,6 +105,16 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """Updates an instance based on the class name and id by adding or
         updating attribute."""
+=======
+            objects = {
+                key: obj for key, obj in objects.items()
+                if key.startswith(arg)
+            }
+        print([str(obj) for obj in objects.values()])
+
+    def do_update(self, arg):
+        """Updates an instance based on the class name and id"""
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
         args = arg.split()
         if not args:
             print("** class name missing **")
