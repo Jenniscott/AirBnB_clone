@@ -7,6 +7,14 @@ import models
 
 class BaseModel:
     """Defines all common attributes/methods for other classes."""
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
+>>>>>>> 254bda08bc376e0aa42da2ebdddd3b0e208f33e5
     def __init__(self, *args, **kwargs):
         """Initializes a new instance of BaseModel."""
         if kwargs:
@@ -26,7 +34,12 @@ class BaseModel:
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
+<<<<<<< HEAD
+        """Updates the updated_at attribute with the current datetime
+        xsxxsxand saves the instance."""
+=======
         """Updates the updated_at attribute."""
+>>>>>>> 7955dd2d5a69f66ed1e7a04649b7b36ceb2f277a
         self.updated_at = datetime.now()
         models.storage.save()
 
