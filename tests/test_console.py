@@ -1,39 +1,38 @@
 #!/usr/bin/python3
 
+from console import HBNBCommand
+
 import unittest
 from unittest.mock import patch
 from io import StringIO
 import sys
 import os
 import subprocess
-
-# Add the parent directory to the sys.path to import console
+"""Add the parent directory to the sys.path to import console"""
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from console import HBNBCommand
 
 class ConsoleTests(unittest.TestCase):
-    #Unit tests for  HBNBCommand class.
+    """Unit tests for  HBNBCommand class."""
 
     def setUp(self):
-        #Set up test environment.
+        """Set up test environment."""
         self.console = HBNBCommand()
 
     def test_quit(self):
-        #Test quit command.
+        """Test quit command."""
         with patch('sys.stdout', new=StringIO()) as output:
             self.assertTrue(self.console.onecmd("quit"))
             self.assertEqual(output.getvalue().strip(), '')
 
     def test_EOF(self):
-        #Test EOF command.
+        """Test EOF command."""
         with patch('sys.stdout', new=StringIO()) as output:
             self.assertTrue(self.console.onecmd("EOF"))
             self.assertEqual(output.getvalue().strip(), '')
 
-
     def test_emptyline(self):
-        #Test empty line
+        """Test empty line"""
         with patch('sys.stdout', new=StringIO()) as output:
             self.console.onecmd("")
             self.assertEqual(output.getvalue().strip(), '')

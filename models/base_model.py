@@ -4,10 +4,9 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """Defines all common attributes/methods for other classes."""
-
-
     def __init__(self, *args, **kwargs):
         """Initializes a new instance of BaseModel."""
         if kwargs:
