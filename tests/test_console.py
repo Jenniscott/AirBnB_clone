@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from console import HBNBCommand
 
 from console import HBNBCommand
 
@@ -13,6 +14,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 class ConsoleTests(unittest.TestCase):
+
+
     """Unit tests for  HBNBCommand class."""
 
     def setUp(self):
@@ -43,7 +46,9 @@ class ConsoleTests(unittest.TestCase):
                                 input="help\n",
                                 text=True,
                                 capture_output=True)
-        expected_output = "\nDocumented commands (type help <topic>):\n========================================\nEOF  all  create  destroy  help  quit  show  update\n\n"
+        expected_output = "\nDocumented commands (type help <topic>):
+        \n========================================\nEOF  all  create \
+        destroy  help  quit  show  update\n\n"
         self.assertIn(expected_output.strip(), result.stdout.strip())
 
     def test_non_interactive_mode(self):
