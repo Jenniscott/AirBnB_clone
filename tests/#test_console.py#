@@ -41,7 +41,9 @@ class ConsoleTests(unittest.TestCase):
                                 input="help\n",
                                 text=True,
                                 capture_output=True)
-        expected_output = "\nDocumented commands (type help <topic>):\n========================================\nEOF  all  create  destroy  help  quit  show  update\n\n"
+        expected_output = "\nDocumented commands(type help < topic>):
+        \n========================================\nEOF  all  create \
+        destroy  help  quit  show  update\n\n"
         self.assertIn(expected_output.strip(), result.stdout.strip())
 
     def test_non_interactive_mode(self):
