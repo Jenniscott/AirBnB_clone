@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 from console import HBNBCommand
-
-from console import HBNBCommand
-
 import unittest
 from unittest.mock import patch
 from io import StringIO
@@ -14,9 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 class ConsoleTests(unittest.TestCase):
-
-
-    """Unit tests for  HBNBCommand class."""
+    """Unit tests for HBNBCommand class."""
 
     def setUp(self):
         """Set up test environment."""
@@ -46,7 +41,7 @@ class ConsoleTests(unittest.TestCase):
                                 input="help\n",
                                 text=True,
                                 capture_output=True)
-        expected_output = "\nDocumented commands (type help <topic>):
+        expected_output = "\nDocumented commands(type help < topic >) -
         \n========================================\nEOF  all  create \
         destroy  help  quit  show  update\n\n"
         self.assertIn(expected_output.strip(), result.stdout.strip())
