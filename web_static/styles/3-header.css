@@ -5,14 +5,14 @@ header {
     border-bottom:1px solid #CCCCCC;
     display:flex;
     align-items:center;
-    padding:20px;
 }
 
 .logo {
     background-image:url("../images/logo.png");
-    background-size:contain;
+    background-position:center;:
     background-repeat:no-repeat;
-    margin-top:20px;
-    align-self:flex-start;
+    display:block;
+    width:142px;
+    height:60px
     margin-left:20px;
 }
